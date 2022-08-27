@@ -75,27 +75,33 @@ namespace ifesle_ExamplePractice
                     break;
             }
 
-            // 0: 가위 1:바위 2: 보 
-            // 코드 0824 버전보다 좀더 간편하게 
-            if (choice == aiChoice) 
-            { 
-                Console.WriteLine("결과는 비겼습니다"); 
-            }
-            else if (choice == SCISSORS && aiChoice == PAPER) 
-            {
-                Console.WriteLine("Player 승"); 
-            }
-            else if (choice == ROCK && aiChoice == SCISSORS)
-            { 
-                Console.WriteLine("Player 승"); 
-            }
-            else if (choice == PAPER && aiChoice == ROCK)
-            {
-                Console.WriteLine("Player 승"); 
-            }
+        
+            // 승리 무승부 패배
+
+            //1. 이기는 경우 
+            /// choice == (aiChoice+1)%3 
+            // (나와 컴퓨터의 숫자가 2차이면 내가 이김. 
+            // 3이 넘어가면 %을 이용해 0으로 초기화)
+
+            //2. 지는 경우
+            // (choice+1)%3 == aiChoice (1차이면 컴퓨터가 이김.)
+
+            //3. 비기는 경우
+            // choice == aiChoice (같으면 무승부)
+            if (choice == (aiChoice + 1) % 3)
+
+                Console.WriteLine("당신이 이겼습니다.");
+
+            else if ((choice + 1) % 3 == aiChoice)
+
+                Console.WriteLine("컴퓨터가 이겼습니다.");
+
             else
+
             {
-                Console.WriteLine("Player 패"); 
+
+                Console.WriteLine("무승부입니다.");
+
             }
 
 
