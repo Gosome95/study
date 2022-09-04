@@ -75,7 +75,6 @@ namespace ifesle_ExamplePractice
                     break;
             }
 
-        
             // 승리 무승부 패배
 
             //1. 이기는 경우 
@@ -112,3 +111,4 @@ namespace ifesle_ExamplePractice
 
     }
 }
+
